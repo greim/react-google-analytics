@@ -35,7 +35,7 @@ ga.Initializer = React.createClass
     el = document.createElement 'script'
     el.type = 'text/javascript'
     el.async = true
-    el.src = '//www.google-analytics.com/analytics.js'
+    el.src = if @props.debug then '//www.google-analytics.com/analytics_debug.js' else '//www.google-analytics.com/analytics.js'
     s = document.getElementsByTagName('script')[0]
     s.parentNode.insertBefore el, s
   render: ->
